@@ -3,6 +3,7 @@ from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 from model.base import Base
 
+
 class Character(Base):
     __tablename__ = "Character"
 
@@ -14,5 +15,3 @@ class Character(Base):
     skin_color: Mapped[str] = mapped_column(String(30))
     eye_color: Mapped[str] = mapped_column(String(30))
     birth_year: Mapped[int]
-
-
