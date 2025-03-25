@@ -9,5 +9,6 @@ router = APIRouter()
 def get_all_characters():
     session = get_session()
     characters = session.query(Character).all()
-    print("Personajes: ", characters)
-    return characters
+    requested_attributes = ["id", "name", "height", "mass", "birth_year", "eye_color"]
+    characters_formatted = [{attr: getattr(char, attr)} for char in characters for attr in requested_attributes]
+    return characters_formatted
