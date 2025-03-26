@@ -1,10 +1,5 @@
 from pydantic import BaseModel, Field
-''' 
-    Documentation: 
-        -https://docs.pydantic.dev/latest/concepts/models/#rebuilding-model-schema
-        -https://docs.pydantic.dev/1.10/usage/models/
-        -https://fastapi.tiangolo.com/tutorial/response-model/#add-an-output-model
-'''
+
 
 class CharacterModel(BaseModel):
     id: int = Field(..., description="Unique identifier of the character")
