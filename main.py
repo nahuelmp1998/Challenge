@@ -9,4 +9,4 @@ from config.lifespan import lifespan
 from controllers.character import router as character_router
 
 app = FastAPI(lifespan=lifespan)
-app.include_router(character_router)  # Aquí lo incluyes
+app.include_router(character_router) 

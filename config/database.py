@@ -17,8 +17,11 @@ Session = sessionmaker(engine)
 
 
 def init_db():
+    '''Initialize the database and add a new character if it is empty'''
+    
     Base.metadata.create_all(engine)
     session = Session()
+    
     if session.query(CharacterSQL).count() == 0:
         add_new_character(session)
     return
@@ -29,6 +32,8 @@ def get_session():
 
 
 def add_new_character(session: Session):
+    '''Add the new character if it does not already exist'''
+    
     characters = [
         CharacterSQL(
             id=1,
@@ -41,7 +46,6 @@ def add_new_character(session: Session):
             birth_year=1998,
         ),
     ]
+
     session.add_all(characters)
     session.commit()
-    session.close()
-    return

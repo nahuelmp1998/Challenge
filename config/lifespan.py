@@ -5,7 +5,10 @@ from config.database import init_db
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    print("Creando base de datos...")
+    ''' It load, initialize and create the database'''
+    
     init_db()
+    
     yield
+    
     print("Chau")
