@@ -3,14 +3,6 @@ from sqlalchemy.orm import sessionmaker, Session
 from models.character import CharacterSQL
 from models.base import Base
 
-""" 
-    https://docs.sqlalchemy.org/en/20/core/connections.html
-    
-    El garbage collector de python se encarga de cerrar la conexión cuando detecta
-    que no está más en uso.
-    
-    Para un manejo más claro de las conexiones es mejor utilizar instancias de Session.
-"""
 
 engine = create_engine("sqlite:///./characters.db", echo=True)
 Session = sessionmaker(engine)
