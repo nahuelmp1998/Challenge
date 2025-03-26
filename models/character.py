@@ -4,7 +4,6 @@ from sqlalchemy.orm import mapped_column
 from models.base import Base
 
 
-
 class CharacterSQL(Base):
     __tablename__ = "Character"
 
