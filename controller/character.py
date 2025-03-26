@@ -28,7 +28,7 @@ def get_character_by_id(id: int):
         return character
 
 
-@router.post("/character/add", tags=["Characters"])
+@router.post("/character/add", tags=["Characters"], response_model=CharacterDetailedModel)
 async def add_new_character(character: CharacterDetailedModel):
     with get_session() as session:
         # character_sql = CharacterSQL(**({key: value} for key, value in character.__dict__.items())) #Genero un diccionario con los valores de character y lo mapeo al modelo Sql, NO SE PORQ NO FUNCIONA XD
