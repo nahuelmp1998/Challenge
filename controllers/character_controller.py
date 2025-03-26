@@ -3,7 +3,6 @@ from fastapi.responses import JSONResponse
 from config.database import get_session
 from schemas.character import CharacterModel, CharacterDetailedModel
 from services.character_service import CharacterService
-from fastapi.openapi.utils import get_openapi
 
 
 router = APIRouter(prefix="/character", tags=["Characters"])
