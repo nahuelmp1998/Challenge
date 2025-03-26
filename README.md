@@ -4,8 +4,9 @@
 
 - Python 3.0 or bigger
 - Dependencies at`requirements.txt`
+- Docker (optional for running in containers)
 
-## Instalación y Ejecución
+## Run the app
 
 1. Clone the repository:
 
@@ -30,6 +31,18 @@
 5. Execute the application:
     ```bash
         uvicorn main:app --reload
+
+## Using docker
+
+1. At the root directory, where Dockerfile is located, run:
+    ```bash
+        sudo docker build -t challenge-app .
+2. Run the docker container
+    ```bash
+        sudo docker run -d -p 8000:8000 challenge-app
+
+This will expose the app on http://localhost:8000.
+
 
 # Download Postman collection:
 
