@@ -25,7 +25,7 @@ class CharacterService:
         return character
 
     def add_new_character(self, character: CharacterDetailedModel) -> JSONResponse:
-        # character_sql = CharacterSQL(**({key: value} for key, value in character.__dict__.items())) #Genero un diccionario con los valores de character y lo mapeo al modelo Sql, NO SE PORQ NO FUNCIONA XD
+        # Adding a new character if it does not already exist
         character_sql = CharacterSQL(
             id=character.id,
             name=character.name,
@@ -56,6 +56,7 @@ class CharacterService:
             )
             
     def delete_character(self, id: int) -> JSONResponse:
+            # Deleting character if it does not already exist
             try:
                 character = (
                     self.session.query(CharacterSQL).filter(CharacterSQL.id == id).first()
