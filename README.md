@@ -46,7 +46,7 @@ This will expose the app on http://localhost:8000.
 
 # Download Postman collection:
 
-👉 [postman/API-Challenge.postman_collection.json](postman/API-Challenge.postman_collection.json)
+[postman/API-Challenge.postman_collection.json](postman/API-Challenge.postman_collection.json)
 
 # API Documentation
 
