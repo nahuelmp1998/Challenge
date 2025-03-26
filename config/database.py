@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
-from model.character import CharacterSQL
-from model.base import Base
+from models.character import CharacterSQL
+from models.base import Base
 
 """ 
     https://docs.sqlalchemy.org/en/20/core/connections.html
@@ -20,7 +20,7 @@ def init_db():
     Base.metadata.create_all(engine)
     session = Session()
     if session.query(CharacterSQL).count() == 0:
-        add_new_character(session=session)
+        add_new_character(session)
     return
 
 
@@ -28,7 +28,7 @@ def get_session():
     return Session()
 
 
-def add_new_character(session: Session):  # type: ignore
+def add_new_character(session: Session):
     characters = [
         CharacterSQL(
             id=1,
