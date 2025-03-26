@@ -25,7 +25,7 @@
     * For MacOs/Linux
         ```bash
         source venv/bin/activate
-4. Instalar las dependencias:
+4. Install dependecies:
     ```bash
         pip install -r requirements.txt
 5. Execute the application:
