@@ -6,7 +6,7 @@ Documentation used
 
 from fastapi import FastAPI
 from config.lifespan import lifespan
-from controller.character import router as character_router
+from controllers.character import router as character_router
 
 app = FastAPI(lifespan=lifespan)
 app.include_router(character_router)  # Aquí lo incluyes
