@@ -4,8 +4,8 @@ from pydantic import BaseModel, Field
 class CharacterModel(BaseModel):
     id: int = Field(..., description="Unique identifier of the character")
     name: str = Field(..., min_length=1, description="Name of the character")
-    height: int = Field(..., description="Height in cm")
-    mass: int = Field(..., description="Mass in kg")
+    height: int = Field(..., description="")
+    mass: int = Field(..., description="")
     eye_color: str = Field(..., description="Eye color of the character")
     birth_year: int = Field(..., gt=0, description="Birth year of the character")
     
